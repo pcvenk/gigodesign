@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gigodesign</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <link href="icons/style.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" >
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="jquery.charactercounter.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+
+    <body>
+
+    <div class="form-wrapper">
+        <form>
+            <div class="navigaton">
+                <span class="icon-chevron-small-left"></span>
+                <span class="posts">New Post</span>
+                <span class="icon-eye"></span>
+            </div>
+
+            <div class="category">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Category
+                        <span class="icon-chevron-small-down"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="#">Category</a></li>
+                        <li><a href="#">Revija</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <input type="text" class="hashtag" placeholder="#tags..." maxlength="45" />
+
+            <textarea id="count-me" rows="3" placeholder="Title..."></textarea>
+
+            <div class="date-wrapper">
+                <span id="date"></span>
+                <span class="date-content">in</span>
+                <img class="fpimage" src="images/fokuspokus.jpeg" width="15" height="15"/>
+                <span class="fokuspokus">fokuspokus</span>
+            </div>
+
+            <textarea id="count-me2" rows="4" placeholder="Need to know..."></textarea>
+
+            <div class="about-the-author">
+                <img class="author" src="images/marko-crnkovic.jpg" />
+                <div class="author-name">Marko Crnkovič</div>
+            </div>
+        </form>
+
+        <div class="btn btn-primary2">Publish</div>
+        <div class="btn btn-default2">Save as draft</div>
+    </div>
+
+    <div class="form-wrapper-preview">
+        <form>
+            <div class="navigaton">
+                <span class="icon-chevron-small-left"></span>
+                <span class="posts">Preview</span>
+                <span class="icon-eye-hidden"></span>
+            </div>
+
+            <div class="categories">Revija</div>
+
+            <div class="hashtag-preview"></div>
+
+            <textarea id="count-me-preview" rows="3" placeholder="Title..."></textarea>
+
+            <div class="date-wrapper-preview">
+                <span id="date-preview"></span>
+                <span class="date-content-preview">in</span>
+                <img class="fpimage-preview" src="images/fokuspokus.jpeg" width="15" height="15"/>
+                <span class="fokuspokus">fokuspokus</span>
+            </div>
+
+            <textarea id="count-me2-preview" rows="4" placeholder="Need to know..."></textarea>
+
+            <div class="about-the-author-preview">
+                <img class="author" src="images/marko-crnkovic.jpg" />
+                <div class="author-name">Marko Crnkovič</div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("date").innerHTML = formatAMPM();
+
+        function formatAMPM() {
+            var d = new Date(),
+                    minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+                    hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+                    months = ['01','02','03','04','05','06','07','08','09','10','11','12'];
+            return months[d.getMonth()]+'.'+d.getDate()+'.'+d.getFullYear()+' / '+hours+':'+minutes;
+        }
+
+        document.getElementById("date-preview").innerHTML = formatAMPM();
+
+        function formatAMPM() {
+            var d = new Date(),
+                    minutes = d.getMinutes().toString().length == 1 ? '0'+d.getMinutes() : d.getMinutes(),
+                    hours = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours(),
+                    months = ['01','02','03','04','05','06','07','08','09','10','11','12'];
+            return months[d.getMonth()]+'.'+d.getDate()+'.'+d.getFullYear()+' / '+hours+':'+minutes;
+        }
+    </script>
+
+    </body>
+</html>
